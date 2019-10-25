@@ -39,7 +39,7 @@ modalSearchInput.on('keyup', function (e) {
                   //   b.setAttribute('class', 'result-item');
                   //   b.innerHTML = m;
                   //   $('.result').append(m);
-                    console.log(m.name);
+                    console.log(`${m.hits} |  ${m.name}`);
                   })
                   console.log(`count - ${req.length}`)
                   console.log('---------------------------------------------------------------------------');

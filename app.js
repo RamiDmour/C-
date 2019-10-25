@@ -23,7 +23,8 @@ app.post('/search', function(req, res) {
         results.hits.hits.forEach((hit, index) => {
             data = {
                 name: hit._source.name,
-                content: hit._source.content
+                content: hit._source.content,
+                hits: hit._score
             }
             r.push(data);
             console.log(data.name);

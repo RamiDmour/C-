@@ -7,14 +7,14 @@
   const search = function search(query) {
     let index = "docs";
     let body = {
-      size: 100,
+      size: 1000,
       from: 0,
       query: {
         multi_match: {
           query: query,
-          fields: ['name', 'content'],
-          minimum_should_match: 4,
-          fuzziness: 1
+          type: "best_fields",         
+          fields: ['name^4', 'content'],
+          fuzziness: "AUTO"
         }
       }
     }
