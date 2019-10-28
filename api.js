@@ -1,19 +1,15 @@
-const fs = require('fs');
-const http = require("http");
-const search = require("./search_multi_match.js");
-const axios = require('axios');
++const search = require("./search_multi_match.js");
 const bodyParser = require('body-parser')
 const express = require("express");
-const elasticsearch = require('elasticsearch');
 const app = express();
 
-app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static(__dirname + "/public"));
 
 app.get('/', function(){
-    console.log("Great");  
+    
 })
 
 app.post('/search', function(req, res) {

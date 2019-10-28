@@ -14,7 +14,8 @@
           query: query,
           type: "best_fields",         
           fields: ['name^4', 'content'],
-          fuzziness: "AUTO"
+          fuzziness: "AUTO",
+          tie_breaker: 0.3
         }
       }
     }

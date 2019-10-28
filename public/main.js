@@ -24,7 +24,7 @@ modalSearchInput.on('keyup', function (e) {
 
         $this.data('timer', setTimeout(function () {
             $this.removeData('timer');
-            
+            console.time('search')
             $.ajax({
                 type: "POST",
                 url: "/search",
@@ -42,6 +42,7 @@ modalSearchInput.on('keyup', function (e) {
                     console.log(`${m.hits} |  ${m.name}`);
                   })
                   console.log(`count - ${req.length}`)
+                  console.timeEnd('search');
                   console.log('---------------------------------------------------------------------------');
                   
                 }
